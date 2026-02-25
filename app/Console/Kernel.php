@@ -16,6 +16,15 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\CheckWishlistCampaigns::class,
     ];
 
+    protected $middleware = [
+        \App\Http\Middleware\TrustProxies::class,
+        \Illuminate\Http\Middleware\HandleCors::class,
+        \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
+        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        \App\Http\Middleware\TrimStrings::class,
+        \App\Http\Middleware\ConvertEmptyStringsToNull::class,
+    ];
+
     /**
      * Define the application's command schedule.
      */
